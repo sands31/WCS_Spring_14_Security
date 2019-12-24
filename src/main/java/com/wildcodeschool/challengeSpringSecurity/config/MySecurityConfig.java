@@ -16,8 +16,8 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 		    http
 		        .authorizeRequests()
 			        .antMatchers("/").permitAll()
-			        .antMatchers("/avengers/assemble").access("hasRole('CHAMPION')")
-			        .antMatchers("/secret-bases").access("hasRole('DIRECTOR')")
+			        .antMatchers("/avengers/assemble").hasRole("CHAMPION")
+			        .antMatchers("/secret-bases").hasRole("DIRECTOR")
 			            .and()
 			        .formLogin()
 			            .and()
